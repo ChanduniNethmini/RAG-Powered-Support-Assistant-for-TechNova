@@ -1,0 +1,210 @@
+{
+  "description": "Evaluation set for the TechNova Support Assistant RAG project. Each item contains a question, the expected source file(s) the retriever should pull from, and key facts the answer should mention. Do NOT include this file in your vector store or prompt.",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "q01",
+      "category": "products",
+      "question": "What is the battery capacity of the Nova Phone X1 and how fast does it charge?",
+      "expected_sources": ["products/nova_phone_x1.md"],
+      "must_mention": ["5000mAh", "65W"]
+    },
+    {
+      "id": "q02",
+      "category": "products",
+      "question": "How much does the base configuration of the Nova Laptop Pro 14 cost?",
+      "expected_sources": ["products/nova_laptop_pro.md"],
+      "must_mention": ["$1,799", "16GB", "512GB"]
+    },
+    {
+      "id": "q03",
+      "category": "products",
+      "question": "Which audio codecs do the Nova Earbuds 2 support?",
+      "expected_sources": ["products/nova_earbuds.md"],
+      "must_mention": ["SBC", "AAC", "LDAC", "NovaLossless"]
+    },
+    {
+      "id": "q04",
+      "category": "products",
+      "question": "Is the Nova Watch Series 3 compatible with iPhones?",
+      "expected_sources": ["products/nova_smartwatch.md"],
+      "must_mention": ["limited", "iOS", "notifications"]
+    },
+    {
+      "id": "q05",
+      "category": "faqs",
+      "question": "How long does standard shipping take in the US and is it free?",
+      "expected_sources": ["faqs/shipping.md"],
+      "must_mention": ["3-5 business days", "$50", "free"]
+    },
+    {
+      "id": "q06",
+      "category": "faqs",
+      "question": "Can I return earbuds after I have opened them?",
+      "expected_sources": ["faqs/returns.md", "policies/return_policy.md"],
+      "must_mention": ["hygiene", "non-returnable"]
+    },
+    {
+      "id": "q07",
+      "category": "faqs",
+      "question": "What two-factor authentication methods does TechNova support?",
+      "expected_sources": ["faqs/account.md"],
+      "must_mention": ["SMS", "authenticator app", "hardware"]
+    },
+    {
+      "id": "q08",
+      "category": "policies",
+      "question": "What is the return window for NovaCare+ members?",
+      "expected_sources": ["policies/return_policy.md"],
+      "must_mention": ["45 days"]
+    },
+    {
+      "id": "q09",
+      "category": "policies",
+      "question": "Within how many days of purchase can I add NovaCare+ to my product?",
+      "expected_sources": ["policies/warranty_policy.md", "faqs/warranty.md"],
+      "must_mention": ["60 days"]
+    },
+    {
+      "id": "q10",
+      "category": "policies",
+      "question": "Within what timeframe will TechNova notify me of a data breach affecting my information?",
+      "expected_sources": ["policies/privacy_policy.md"],
+      "must_mention": ["72 hours"]
+    },
+    {
+      "id": "q11",
+      "category": "policies",
+      "question": "Does my battery qualify for a warranty replacement if it holds 75% capacity after 8 months?",
+      "expected_sources": ["policies/warranty_policy.md", "faqs/warranty.md"],
+      "must_mention": ["80%", "covered"]
+    },
+    {
+      "id": "q12",
+      "category": "support_tickets",
+      "question": "Was the customer in ticket 004 covered for the cracked screen on their Nova Watch?",
+      "expected_sources": ["support_tickets/ticket_004.md"],
+      "must_mention": ["not covered", "physical damage", "$189"]
+    },
+    {
+      "id": "q13",
+      "category": "support_tickets",
+      "question": "How did TechNova handle the lost laptop shipment in ticket 003?",
+      "expected_sources": ["support_tickets/ticket_003.md"],
+      "must_mention": ["overnight", "reship", "refunded"]
+    },
+    {
+      "id": "q14",
+      "category": "company",
+      "question": "Where is TechNova headquartered and when was it founded?",
+      "expected_sources": ["company/about.md"],
+      "must_mention": ["Austin", "Texas", "2018"]
+    },
+    {
+      "id": "q15",
+      "category": "company",
+      "question": "What is the phone number for NovaCare+ priority support?",
+      "expected_sources": ["company/contact.md"],
+      "must_mention": ["1-800-NOVA-CARE"]
+    },
+    {
+      "id": "q16",
+      "category": "out_of_scope",
+      "question": "What is the weather in Paris tomorrow?",
+      "expected_sources": [],
+      "must_mention": ["don't know", "not have", "cannot"],
+      "notes": "This is an out-of-scope question. A good assistant should say it doesn't know rather than hallucinate."
+    },
+    {
+      "id": "q17",
+      "category": "products",
+      "question": "How much does the Nova Tablet 11 with 256GB Wi-Fi cost and what's the stylus called?",
+      "expected_sources": ["products/nova_tablet.md"],
+      "must_mention": ["$579", "Nova Pen 2"]
+    },
+    {
+      "id": "q18",
+      "category": "products",
+      "question": "What is the power output of the Nova Sound Max speaker?",
+      "expected_sources": ["products/nova_speaker.md"],
+      "must_mention": ["90W"]
+    },
+    {
+      "id": "q19",
+      "category": "faqs",
+      "question": "What financing options does TechNova offer in the US?",
+      "expected_sources": ["faqs/payments.md"],
+      "must_mention": ["Klarna", "Affirm", "$500"]
+    },
+    {
+      "id": "q20",
+      "category": "faqs",
+      "question": "How do I force restart my Nova Phone X1 if it won't turn on?",
+      "expected_sources": ["faqs/troubleshooting.md"],
+      "must_mention": ["Power", "Volume Down", "10 seconds"]
+    },
+    {
+      "id": "q21",
+      "category": "faqs",
+      "question": "For how many years does TechNova guarantee software updates on a Nova device?",
+      "expected_sources": ["faqs/software_updates.md"],
+      "must_mention": ["5 years"]
+    },
+    {
+      "id": "q22",
+      "category": "policies",
+      "question": "Does TechNova ship to Russia?",
+      "expected_sources": ["policies/shipping_policy.md"],
+      "must_mention": ["Russia", "suspended", "cannot"]
+    },
+    {
+      "id": "q23",
+      "category": "policies",
+      "question": "What is the minimum age to create a TechNova account?",
+      "expected_sources": ["policies/terms_of_service.md"],
+      "must_mention": ["13"]
+    },
+    {
+      "id": "q24",
+      "category": "release_notes",
+      "question": "Which NovaOS update introduced the NovaAssist on-device AI feature?",
+      "expected_sources": ["release_notes/novaos_5_2.md"],
+      "must_mention": ["5.2", "NovaAssist"]
+    },
+    {
+      "id": "q25",
+      "category": "release_notes",
+      "question": "What new workout types were added in NovaWatch OS 4.1?",
+      "expected_sources": ["release_notes/novawatch_os_4_1.md"],
+      "must_mention": ["Pilates", "HIIT", "Tai Chi"]
+    },
+    {
+      "id": "q26",
+      "category": "support_tickets",
+      "question": "What was the root cause of the stylus issue in ticket 005 and how was it resolved?",
+      "expected_sources": ["support_tickets/ticket_005.md"],
+      "must_mention": ["3.4.1", "3.4.2", "update"]
+    },
+    {
+      "id": "q27",
+      "category": "support_tickets",
+      "question": "Is the warranty on a Nova Laptop honored internationally?",
+      "expected_sources": ["support_tickets/ticket_008.md"],
+      "must_mention": ["international", "laptop", "yes"]
+    },
+    {
+      "id": "q28",
+      "category": "company",
+      "question": "When does TechNova aim to be carbon-neutral across its full supply chain?",
+      "expected_sources": ["company/sustainability.md"],
+      "must_mention": ["2030", "Scope 3"]
+    },
+    {
+      "id": "q29",
+      "category": "company",
+      "question": "What employee discount do TechNova staff get on Nova products?",
+      "expected_sources": ["company/careers.md"],
+      "must_mention": ["30%"]
+    }
+  ]
+}
